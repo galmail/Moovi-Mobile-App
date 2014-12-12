@@ -1,0 +1,163 @@
+/* Edit Video */
+
+.modal-participant {
+	.participant-buttons {
+		padding: 10px;	
+	}
+}
+
+.gv-video-edit {
+
+	.nav-buttons {
+		position: absolute;
+		bottom: 35px;
+		overflow: hidden;
+		width: 100%;
+		.nav-button {	
+			padding: 10px;
+			&.next-button {
+				float: right;
+			}
+			&.previous-button {
+				float: left;
+			}
+		}
+	}
+
+	.slide {
+		width: 100%;
+		height: 100%;
+		h4 {
+			text-align: center;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.pick-contact-button {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		.send-group-invitations-button {
+			text-align: center;
+		}
+	}
+
+	.progress {
+		height: 20px;
+		margin-bottom: 0;
+		overflow: hidden;
+		.progress-bar {
+			float: left;
+			height: 100%;
+			font-size: 12px;
+			line-height: 20px;
+			color: #fff;
+			text-align: center;
+			background-color: #337ab7;
+			box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+			transition: width .6s ease;
+		}
+		.progress-bar-info {
+			background-color: #5bc0de;
+		}
+		.sr-only {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0,0,0,0);
+			border: 0;
+		}
+	}
+
+
+
+	/********* SELECT RECEIVER ********/
+
+	.select-receiver {
+
+		.list input {
+			text-align: right;
+		}
+
+	}
+
+	/********* BASIC INFO ********/
+
+	.basic-info {
+
+		.video-cover {
+			.cover {
+				width: 100%;
+			}
+			.photoUploadBtn {
+				text-align: center;
+			}
+		}
+
+		.bar {
+			background-color: blue;
+		}
+
+	}
+
+	/********* SELECT OCASSION ********/
+
+	.select-ocassion {
+		
+		.other-ocassion {
+			text-align: right;
+		}
+		.ocassion-date {
+			text-align: right;
+		}
+
+		.placeholder-icon:first-child {
+			padding-right: 20px;
+		}
+		
+
+	}
+
+	/********* UPLOAD CLIP ********/
+
+	.upload-clip {
+
+		.video-clip {
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 20px;
+			display: block;
+
+			/*
+			background:transparent url('/img/video_not_available.png') no-repeat 0 0; 
+		  -webkit-background-size:cover; 
+		  -moz-background-size:cover; 
+		  -o-background-size:cover; 
+		  background-size:cover;
+		  */
+		}
+		
+		.videoUploadBtn {
+			text-align: center;
+			margin-top: 10px;
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+

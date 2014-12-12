@@ -1,0 +1,159 @@
+<ion-view class="gv-video-edit" title="New Video">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-clear button-positive" ng-click="saveVideo()">Save</button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header">
+
+		<ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+
+			<!-- ************* For who is it ************* -->
+		  <ion-slide>
+		    <div class="slide select-receiver">
+		    	<h4>For who is this video?</h4>
+		    	<div ng-if="navigator.contacts" class="pick-contact-button">
+		    		<button class="button button-light icon-left ion-person-add" ng-click="pickContact()">Choose Contact</button>
+		    	</div>
+		    	<div class="list">
+				    <label class="item item-input">
+				    	<span class="input-label">First Name</span>
+					    <input type="text" ng-model="videoData.receiver.first_name"/>
+					  </label>
+					  <label class="item item-input">
+				    	<span class="input-label">Last Name</span>
+					    <input type="text" ng-model="videoData.receiver.last_name"/>
+					  </label>
+					  <label class="item item-input">
+					  	<span class="input-label">Email</span>
+					    <input type="email" ng-model="videoData.receiver.email"/>
+					  </label>
+					  <label class="item item-input item-select">
+					    <div class="input-label">
+					      Gender
+					    </div>
+					    <select ng-model="videoData.receiver.gender">
+					      <option value="M">Male</option>
+					      <option value="F">Female</option>
+					    </select>
+					  </label>
+					  <label class="item item-input">
+					  	<span class="input-label">Birth Date</span>
+					    <input class="birthdate" type="date" ng-model="videoData.receiver.birthdate"/>
+					  </label>
+				  </div>
+		    </div>
+		  </ion-slide>
+
+		  <!-- ************* Select Ocassion and Date ************* -->
+		  <ion-slide>
+		    <div class="slide select-ocassion">
+		    	<h4>Select Ocassion</h4>
+		    	<div class="list">
+					  <label ng-repeat="event in events" class="item item-radio" ng-click="hideOtherOcassion(event)">
+					    <input type="radio" name="group" ng-model="videoData.ocassion.eventId" value="{{event.id}}">
+					    <div class="item-content">{{ event.name }}</div>
+					    <i class="radio-icon ion-checkmark"></i>
+					  </label>
+					  <label class="item item-input" ng-click="showOtherOcassion()">
+					    <span class="input-label">Other</span>
+					    <input class="other-ocassion" type="text" ng-model="videoData.ocassion.eventName" style="{{ _otherOcassionColor }}">
+					  </label>
+				  </div>
+
+				  <div class="list list-inset">
+				  	<label class="item item-input">
+					  	<i class="icon ion-calendar placeholder-icon"></i>
+					  	<span class="input-label">Ocassion Date</span>
+					    <input class="ocassion-date" type="date" ng-model="videoData.ocassion.eventDate"/>
+					  </label>
+					</div>
+		    </div>
+		  </ion-slide>
+
+
+		  <!-- ************* Upload your clip ************* -->
+		  <ion-slide>
+		    <div class="slide upload-clip">
+		    	<h4>Upload Your Clip</h4>
+		    	<video poster="{{videoClipCover}}" class="video-clip" ng-src="{{videoData.clip}}" preload="none">
+					</video>
+				  <div class="videoUploadBtn" s3-upload bucket="'moovi-test'" ng-model="videoData.clip" s3-upload-options="{submitOnChange: true, getOptionsUri: '/api/v1/s3_token.json?ftype=video', folder: 'videos/{{videoData.id}}/', fileType: 'video', buttonName: 'Upload Video', buttonStyle: 'icon-left ion-upload button-positive '}">
+					</div>
+				</div>
+		  </ion-slide>
+
+		  <!-- ************* Invite people to join ************* -->
+		  <ion-slide>
+		    <div class="slide invite-people">
+		    	<h4>Invite people to join</h4>
+
+		    	<div class="pick-contact-button">
+		    		<button class="button button-light icon-left ion-person-add" ng-click="addContactToGroup()">Add Person</button>
+		    		<button class="button button-light icon-left ion-android-add-contact" ng-click="pickContactToGroup()">Pick Contact</button>
+		    	</div>
+
+		    	<ul class="list">
+    				<li ng-hide="person.hidden" ng-click="openContactDetails($index)" ng-repeat="person in videoData.participants" class="item">
+    					{{ person.first_name }} {{ person.last_name }}
+    				</li>
+  				</ul>
+
+  				<div class="send-group-invitations-button" ng-if="videoData.participants.length>0">
+  					<button class="button icon-left ion-android-friends" ng-click="inviteGroup()">Send Invitations</button>
+  				</div>
+
+		    </div>
+		  </ion-slide>
+		  
+		  <!-- ************* Basic Info ************* -->
+		  <ion-slide>
+		    <div class="slide basic-info">
+		    	<h4>Video Title and Cover</h4>
+
+		    	<div class="list">
+					  <div class="video-title">
+						  <label class="item item-input">
+						    <input type="text" placeholder="Video Title" ng-model="videoData.title">
+						  </label>
+					  </div>
+					  <div class="video-cover">
+						  <img class="cover" ng-src="{{ videoData.cover }}" style="max-height:{{ coverMaxHeight }};" />
+						  <div class="photoUploadBtn" s3-upload bucket="'moovi-test'" ng-model="videoData.cover" s3-upload-options="{submitOnChange: true, getOptionsUri: '/api/v1/s3_token.json?ftype=photo', folder: 'videos/{{videoData.id}}/', fileType: 'image', buttonName: 'Upload Video Cover', buttonStyle: 'icon-left ion-upload button-positive '}">
+							</div>
+						</div>
+		    	</div>
+		    </div>
+		  </ion-slide>
+
+
+		  <!-- <ion-slide>
+		  	<div>
+			    <debug val="videoData"></debug>
+			  </div>
+		  </ion-slide> -->
+		    
+		  
+		  
+		  
+		  
+
+		  
+
+		  
+
+		</ion-slide-box>
+
+		
+
+
+
+  </ion-content>
+
+  <div class="nav-buttons">
+  	<button ng-if="!firstSlide()" class="button button-clear button-positive icon-left ion-chevron-left previous-button nav-button" ng-click="previousSlide()">Previous</button>
+		<button ng-if="!lastSlide()" class="button button-clear button-positive icon-right ion-chevron-right next-button nav-button" ng-click="nextSlide()">Next</button>
+  </div>
+</ion-view>

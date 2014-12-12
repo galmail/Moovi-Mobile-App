@@ -1,0 +1,29 @@
+/* Video Preview */
+
+.gv-video-preview {
+	.guests {
+		overflow: hidden;
+		.guest {
+			float: left;
+			width: 60px;
+			height: 60px;
+			border-radius: 30px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			margin-right: 5px;
+		}
+		.guest1 {
+			background-image: url('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/c34.34.429.429/s160x160/377527_10150595092823453_1205056058_n.jpg?oh=b9b2e0255b385326b319deb5e8724b19&oe=550E1B40&__gda__=1427764877_dbc32edf548e06417ee429ab0f0434e2');
+
+		}
+		.guest2 {
+			background-image: url('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/c0.0.160.160/p160x160/10177454_10203981216682703_7187207798245822326_n.jpg?oh=1dab6a4adc91ed41e74c3238c72bdff3&oe=54DC5CA0&__gda__=1428178896_b55c267914c482e6caa23a9be165f589');
+		}
+		.guest3 {
+			background-image: url('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/p160x160/10606015_10203678199649599_4089915310920296863_n.jpg?oh=64607f7cd16fad93b5e8ad00310e7a52&oe=54D74D8C&__gda__=1427573527_e24c4a4e5551304b143a5c270049fffc');
+		}
+		.guest4 {
+			background-image: url('https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10686756_10152417889592914_5820011321176316949_n.jpg?oh=378954c62349edbafa73ce41a0c78c96&oe=55200226&__gda__=1427141424_ad3d3a480af330ef2c41c73386dfb378');
+		}
+	}
+}

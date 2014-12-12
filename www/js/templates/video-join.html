@@ -1,0 +1,21 @@
+<ion-view class="gv-video-join" title="Join Video">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+
+    <div class="upload-clip">
+    	<h4>Upload Your Clip</h4>
+    	<p>Gal has invited you to make a special video for Josh on his Birthday.</p>
+    	<video poster="{{videoClipCover}}" class="video-clip" ng-src="{{videoData.clip}}" preload="none">
+			</video>
+		  <div class="videoUploadBtn" s3-upload bucket="'moovi-test'" ng-model="videoData.clip" s3-upload-options="{submitOnChange: true, getOptionsUri: '/api/v1/s3_token.json?ftype=video', folder: 'videos/{{videoData.id}}/', fileType: 'video', buttonName: 'Upload Video Clip', buttonStyle: 'icon-left ion-upload button-positive '}">
+			</div>
+		</div>
+
+		<!-- <div>
+	    <debug val="videoData"></debug>
+	  </div> -->
+		  
+  </ion-content>
+</ion-view>

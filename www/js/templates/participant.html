@@ -1,0 +1,30 @@
+<div class="modal modal-participant">
+  <ion-header-bar>
+    <button class="button button-clear button-clear" ng-click="closeContactDetails()">Close</button>
+    <h1 class="title">Video Participant</h1>
+    <button class="button button-clear button-positive" ng-click="saveContactDetails()">Save</button>
+  </ion-header-bar>
+  <ion-content>
+    <form name="participantForm">
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">First Name</span>
+        <input type="text" ng-model="selectedParticipant.first_name">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Last Name</span>
+        <input type="text" ng-model="selectedParticipant.last_name">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Email</span>
+        <input type="email" ng-model="selectedParticipant.email" required>
+      </label>
+    </div>
+    </form>
+    <div class="participant-buttons">
+      <button class="button button-block button-stable icon-left ion-paper-airplane" ng-click="sendInvitationToContact()">Send Invitation</button>
+      <button class="button button-block button-assertive icon-left ion-ios7-close-outline" ng-click="removeContactFromGroup()">Remove from Group</button>
+    </div>
+  </ion-content>
+</div>
+

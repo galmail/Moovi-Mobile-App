@@ -1,0 +1,27 @@
+/* Settings Style */
+
+.gv-settings {
+
+
+
+	.profile {
+		clear: both;
+		overflow: hidden;
+		.left {
+			float: left;
+			width: 30%;
+			img {
+				height: 86px;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+				margin-top: 2px;
+			}
+		}
+		.right {
+			float: right;
+			width: 70%;
+		}
+	}
+
+}
