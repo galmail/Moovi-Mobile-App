@@ -59,15 +59,35 @@ moovi.run(function($ionicPlatform) {
     controller: 'AuthCtrl'
   })
 
+  .state('app.splash', {
+    url: "/splash",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/splash.html"
+      }
+    }
+  })
+
+  .state('app.login', {
+    url: "/login",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/login.html",
+        controller: 'AuthCtrl'
+      }
+    }
+  })
+
   .state('app.videos', {
     url: "/videos",
     views: {
       'menuContent' :{
         templateUrl: "js/templates/videos.html",
-        controller: 'VideoCtrl'
+        controller: 'VideosCtrl'
       }
     }
   })
+
   .state('app.previewVideo', {
     action: 'show',
     url: "/show-video/:videoId",
@@ -78,6 +98,19 @@ moovi.run(function($ionicPlatform) {
       }
     }
   })
+
+
+  .state('app.createVideo', {
+    url: "/create-video",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/video-create.html",
+        controller: 'CreateVideoCtrl'
+      }
+    }
+  })
+
+
   .state('app.editVideo', {
     action: 'edit',
     url: "/edit-video/:videoId",
@@ -88,6 +121,8 @@ moovi.run(function($ionicPlatform) {
       }
     }
   })
+
+
   .state('app.joinVideo', {
     action: 'join',
     url: "/join-video/:videoId/:userId",

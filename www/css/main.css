@@ -7815,21 +7815,64 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   -webkit-transition: none !important;
   transition: none !important; }
 
+/* Splash Style */
+.m-splash .background-layer {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  position: absolute;
+  z-index: -1; }
+  .m-splash .background-layer .photo {
+    background-image: url('../img/splash/splash1.png');
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+    background-position: -140px 0;
+    opacity: 0.6; }
+.m-splash .content {
+  text-align: center;
+  padding-top: 380px; }
+  .m-splash .content .logo {
+    margin-bottom: 20px; }
+
+/* Login Style */
+.m-login .background-layer {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  position: absolute;
+  z-index: -1; }
+  .m-login .background-layer .photo {
+    background-image: url('../img/splash/splash1.png');
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+    background-position: -140px 0;
+    opacity: 0.6; }
+.m-login .content {
+  text-align: center;
+  padding-top: 300px; }
+  .m-login .content .logo {
+    padding-left: 20px;
+    margin-bottom: 20px; }
+  .m-login .content .fb-connect-button span {
+    margin-left: 5px; }
+
 /* Side Menu Style */
-.gv-side-menu .item {
+.m-side-menu .item {
   font-weight: 300;
   font-size: large; }
 
 /* Videos Style */
-.gv-videos .video {
+.m-videos .video {
   text-decoration: none;
   margin-bottom: 10px;
   display: block; }
 
 /* Video Preview */
-.gv-video-preview .guests {
+.m-video-preview .guests {
   overflow: hidden; }
-  .gv-video-preview .guests .guest {
+  .m-video-preview .guests .guest {
     float: left;
     width: 60px;
     height: 60px;
@@ -7837,52 +7880,52 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     background-repeat: no-repeat;
     background-size: cover;
     margin-right: 5px; }
-  .gv-video-preview .guests .guest1 {
+  .m-video-preview .guests .guest1 {
     background-image: url('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/c34.34.429.429/s160x160/377527_10150595092823453_1205056058_n.jpg?oh=b9b2e0255b385326b319deb5e8724b19&oe=550E1B40&__gda__=1427764877_dbc32edf548e06417ee429ab0f0434e2'); }
-  .gv-video-preview .guests .guest2 {
+  .m-video-preview .guests .guest2 {
     background-image: url('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/c0.0.160.160/p160x160/10177454_10203981216682703_7187207798245822326_n.jpg?oh=1dab6a4adc91ed41e74c3238c72bdff3&oe=54DC5CA0&__gda__=1428178896_b55c267914c482e6caa23a9be165f589'); }
-  .gv-video-preview .guests .guest3 {
+  .m-video-preview .guests .guest3 {
     background-image: url('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/p160x160/10606015_10203678199649599_4089915310920296863_n.jpg?oh=64607f7cd16fad93b5e8ad00310e7a52&oe=54D74D8C&__gda__=1427573527_e24c4a4e5551304b143a5c270049fffc'); }
-  .gv-video-preview .guests .guest4 {
+  .m-video-preview .guests .guest4 {
     background-image: url('https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10686756_10152417889592914_5820011321176316949_n.jpg?oh=378954c62349edbafa73ce41a0c78c96&oe=55200226&__gda__=1427141424_ad3d3a480af330ef2c41c73386dfb378'); }
 
 /* Edit Video */
 .modal-participant .participant-buttons {
   padding: 10px; }
 
-.gv-video-edit {
+.m-video-edit {
   /********* SELECT RECEIVER ********/
   /********* BASIC INFO ********/
   /********* SELECT OCASSION ********/
   /********* UPLOAD CLIP ********/ }
-  .gv-video-edit .nav-buttons {
+  .m-video-edit .nav-buttons {
     position: absolute;
     bottom: 35px;
     overflow: hidden;
     width: 100%; }
-    .gv-video-edit .nav-buttons .nav-button {
+    .m-video-edit .nav-buttons .nav-button {
       padding: 10px; }
-      .gv-video-edit .nav-buttons .nav-button.next-button {
+      .m-video-edit .nav-buttons .nav-button.next-button {
         float: right; }
-      .gv-video-edit .nav-buttons .nav-button.previous-button {
+      .m-video-edit .nav-buttons .nav-button.previous-button {
         float: left; }
-  .gv-video-edit .slide {
+  .m-video-edit .slide {
     width: 100%;
     height: 100%; }
-    .gv-video-edit .slide h4 {
+    .m-video-edit .slide h4 {
       text-align: center;
       margin-top: 20px;
       margin-bottom: 20px; }
-    .gv-video-edit .slide .pick-contact-button {
+    .m-video-edit .slide .pick-contact-button {
       text-align: center;
       margin-bottom: 20px; }
-    .gv-video-edit .slide .send-group-invitations-button {
+    .m-video-edit .slide .send-group-invitations-button {
       text-align: center; }
-  .gv-video-edit .progress {
+  .m-video-edit .progress {
     height: 20px;
     margin-bottom: 0;
     overflow: hidden; }
-    .gv-video-edit .progress .progress-bar {
+    .m-video-edit .progress .progress-bar {
       float: left;
       height: 100%;
       font-size: 12px;
@@ -7892,9 +7935,9 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       background-color: #337ab7;
       box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
       transition: width 0.6s ease; }
-    .gv-video-edit .progress .progress-bar-info {
+    .m-video-edit .progress .progress-bar-info {
       background-color: #5bc0de; }
-    .gv-video-edit .progress .sr-only {
+    .m-video-edit .progress .sr-only {
       position: absolute;
       width: 1px;
       height: 1px;
@@ -7903,21 +7946,21 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       overflow: hidden;
       clip: rect(0, 0, 0, 0);
       border: 0; }
-  .gv-video-edit .select-receiver .list input {
+  .m-video-edit .select-receiver .list input {
     text-align: right; }
-  .gv-video-edit .basic-info .video-cover .cover {
+  .m-video-edit .basic-info .video-cover .cover {
     width: 100%; }
-  .gv-video-edit .basic-info .video-cover .photoUploadBtn {
+  .m-video-edit .basic-info .video-cover .photoUploadBtn {
     text-align: center; }
-  .gv-video-edit .basic-info .bar {
+  .m-video-edit .basic-info .bar {
     background-color: blue; }
-  .gv-video-edit .select-ocassion .other-ocassion {
+  .m-video-edit .select-ocassion .other-ocassion {
     text-align: right; }
-  .gv-video-edit .select-ocassion .ocassion-date {
+  .m-video-edit .select-ocassion .ocassion-date {
     text-align: right; }
-  .gv-video-edit .select-ocassion .placeholder-icon:first-child {
+  .m-video-edit .select-ocassion .placeholder-icon:first-child {
     padding-right: 20px; }
-  .gv-video-edit .upload-clip .video-clip {
+  .m-video-edit .upload-clip .video-clip {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -7930,24 +7973,47 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 		  -o-background-size:cover; 
 		  background-size:cover;
 		  */ }
-  .gv-video-edit .upload-clip .videoUploadBtn {
+  .m-video-edit .upload-clip .videoUploadBtn {
     text-align: center;
     margin-top: 10px; }
 
-/* Join Video */
-.gv-video-join {
+/* Edit Video */
+.modal-participant .participant-buttons {
+  padding: 10px; }
+
+.m-video-create {
+  /********* SELECT RECEIVER ********/
+  /********* BASIC INFO ********/
+  /********* SELECT OCASSION ********/
   /********* UPLOAD CLIP ********/ }
-  .gv-video-join h4 {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px; }
-  .gv-video-join p {
-    text-align: center; }
-  .gv-video-join .progress {
+  .m-video-create .nav-buttons {
+    position: absolute;
+    bottom: 35px;
+    overflow: hidden;
+    width: 100%; }
+    .m-video-create .nav-buttons .nav-button {
+      padding: 10px; }
+      .m-video-create .nav-buttons .nav-button.next-button {
+        float: right; }
+      .m-video-create .nav-buttons .nav-button.previous-button {
+        float: left; }
+  .m-video-create .slide {
+    width: 100%;
+    height: 100%; }
+    .m-video-create .slide h4 {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px; }
+    .m-video-create .slide .pick-contact-button {
+      text-align: center;
+      margin-bottom: 20px; }
+    .m-video-create .slide .send-group-invitations-button {
+      text-align: center; }
+  .m-video-create .progress {
     height: 20px;
     margin-bottom: 0;
     overflow: hidden; }
-    .gv-video-join .progress .progress-bar {
+    .m-video-create .progress .progress-bar {
       float: left;
       height: 100%;
       font-size: 12px;
@@ -7957,9 +8023,9 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       background-color: #337ab7;
       box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
       transition: width 0.6s ease; }
-    .gv-video-join .progress .progress-bar-info {
+    .m-video-create .progress .progress-bar-info {
       background-color: #5bc0de; }
-    .gv-video-join .progress .sr-only {
+    .m-video-create .progress .sr-only {
       position: absolute;
       width: 1px;
       height: 1px;
@@ -7968,29 +8034,115 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       overflow: hidden;
       clip: rect(0, 0, 0, 0);
       border: 0; }
-  .gv-video-join .upload-clip .video-clip {
+  .m-video-create .select-receiver .list input {
+    text-align: right; }
+  .m-video-create .basic-info .video-cover .cover {
+    width: 100%; }
+  .m-video-create .basic-info .video-cover .photoUploadBtn {
+    text-align: center; }
+  .m-video-create .basic-info .bar {
+    background-color: blue; }
+  .m-video-create .select-ocassion .item.item-radio {
+    background-color: #000;
+    border-width: 0;
+    margin: 0; }
+    .m-video-create .select-ocassion .item.item-radio .item-content {
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.5;
+      padding: 40px; }
+    .m-video-create .select-ocassion .item.item-radio .item-name {
+      display: block;
+      position: absolute;
+      top: 0;
+      z-index: 1000;
+      color: white;
+      font-weight: bold;
+      font-size: larger;
+      padding: 25px 10px; }
+    .m-video-create .select-ocassion .item.item-radio .radio-icon {
+      color: white;
+      padding-top: 20px; }
+  .m-video-create .select-ocassion .other-ocassion {
+    text-align: right; }
+  .m-video-create .select-ocassion .ocassion-date {
+    text-align: right; }
+  .m-video-create .select-ocassion .placeholder-icon:first-child {
+    padding-right: 20px; }
+  .m-video-create .upload-clip .video-clip {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    display: block;
+    /*
+			background:transparent url('/img/video_not_available.png') no-repeat 0 0; 
+		  -webkit-background-size:cover; 
+		  -moz-background-size:cover; 
+		  -o-background-size:cover; 
+		  background-size:cover;
+		  */ }
+  .m-video-create .upload-clip .videoUploadBtn {
+    text-align: center;
+    margin-top: 10px; }
+
+/* Join Video */
+.m-video-join {
+  /********* UPLOAD CLIP ********/ }
+  .m-video-join h4 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+  .m-video-join p {
+    text-align: center; }
+  .m-video-join .progress {
+    height: 20px;
+    margin-bottom: 0;
+    overflow: hidden; }
+    .m-video-join .progress .progress-bar {
+      float: left;
+      height: 100%;
+      font-size: 12px;
+      line-height: 20px;
+      color: #fff;
+      text-align: center;
+      background-color: #337ab7;
+      box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+      transition: width 0.6s ease; }
+    .m-video-join .progress .progress-bar-info {
+      background-color: #5bc0de; }
+    .m-video-join .progress .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0; }
+  .m-video-join .upload-clip .video-clip {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
     display: block; }
-  .gv-video-join .upload-clip .videoUploadBtn {
+  .m-video-join .upload-clip .videoUploadBtn {
     text-align: center;
     margin-top: 10px; }
 
 /* Settings Style */
-.gv-settings .profile {
+.m-settings .profile {
   clear: both;
   overflow: hidden; }
-  .gv-settings .profile .left {
+  .m-settings .profile .left {
     float: left;
     width: 30%; }
-    .gv-settings .profile .left img {
+    .m-settings .profile .left img {
       height: 86px;
       margin-left: auto;
       margin-right: auto;
       display: block;
       margin-top: 2px; }
-  .gv-settings .profile .right {
+  .m-settings .profile .right {
     float: right;
     width: 70%; }

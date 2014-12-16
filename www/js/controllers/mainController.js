@@ -3,6 +3,6 @@
  *
  */
 
-moovi.controllers.controller('MainCtrl', function($scope, $ionicModal, $timeout) {
+moovi.controllers.controller('MainCtrl', function($scope) {
   
 });

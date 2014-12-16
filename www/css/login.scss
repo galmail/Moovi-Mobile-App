@@ -1,0 +1,38 @@
+/* Login Style */
+
+.m-login {
+	
+	.background-layer {
+		height: 100%;
+		width: 100%;
+		background-color: #000;
+		position: absolute;
+		z-index: -1;
+		.photo {
+			background-image: url('../img/splash/splash1.png');
+			background-repeat: no-repeat;
+			height: 100%;
+			background-size: cover;
+			background-position: -140px 0;
+			opacity: 0.6;
+		}
+	}
+
+	.content {
+		text-align: center;
+		padding-top: 300px;
+		.logo {
+			padding-left: 20px;
+			margin-bottom: 20px;
+			//margin-top: 100px;
+		}
+		.fb-connect-button {
+			span {
+				margin-left: 5px;
+			}
+		}
+	}
+
+	
+
+}

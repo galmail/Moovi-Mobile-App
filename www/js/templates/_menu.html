@@ -11,13 +11,17 @@
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-side-menu-content>
 
-  <ion-side-menu class="gv-side-menu" side="left">
+  <ion-side-menu class="m-side-menu" side="left">
     <header class="bar bar-header bar-stable">
       <h1 class="title">Moovi</h1>
     </header>
     <ion-content class="has-header">
       <ion-list>
-        <ion-item menu-close nav-clear class="item item-icon-left" ng-click="login()">
+        <ion-item menu-close nav-clear class="item item-icon-left" href="#/app/splash">
+          <i class="icon ion-eye"></i>
+          Splash
+        </ion-item>
+        <ion-item menu-close nav-clear class="item item-icon-left" href="#/app/login">
           <i class="icon ion-log-in"></i>
           Login
         </ion-item>
@@ -25,13 +29,13 @@
           <i class="icon ion-film-marker"></i>
           My Videos
         </ion-item>
-        <!-- <ion-item menu-close nav-clear class="item item-icon-left" ng-click="createNewVideo()">
+        <ion-item menu-close nav-clear class="item item-icon-left" href="#/app/create-video">
           <i class="icon ion-videocamera"></i>
           Create Video
-        </ion-item> -->
+        </ion-item>
         <ion-item menu-close nav-clear class="item item-icon-left" href="#/app/join-video/1/1">
           <i class="icon ion-android-social"></i>
-          Join Video Example
+          Join Video
         </ion-item>
         <ion-item menu-close nav-clear class="item item-icon-left" href="#/app/settings">
           <i class="icon ion-android-settings"></i>
@@ -41,7 +45,7 @@
           <i class="icon ion-android-information"></i>
           About
         </ion-item>
-        <ion-item menu-close nav-clear class="item item-icon-left" ng-click="logout()">
+        <ion-item menu-close nav-clear class="item item-icon-left" ng-click="fbLogout()">
           <i class="icon ion-log-out"></i>
           Logout
         </ion-item>

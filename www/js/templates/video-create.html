@@ -1,4 +1,4 @@
-<ion-view class="m-video-edit" title="New Video">
+<ion-view class="m-video-create" title="New Video">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
@@ -9,6 +9,44 @@
   <ion-content class="has-header">
 
 		<ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+
+			<!-- ************* Select Ocassion and Date ************* -->
+		  <ion-slide>
+		    <div class="slide select-ocassion">
+		    	<h4>WHAT IS THIS MOOVI ABOUT?</h4>
+		    	<div class="list">
+					  <label ng-repeat="event in events" class="item item-radio" ng-click="hideOtherOcassion(event)">
+					    <input type="radio" name="group" ng-model="videoData.ocassion.eventId" value="{{event.id}}">
+					    <div style="background-image:url('{{event.pic_url}}');" class="item-content">
+					    </div>
+					    <span class="item-name">{{ event.name }}</span>
+					    <i class="radio-icon ion-checkmark"></i>
+					  </label>
+					  <label class="item item-input" ng-click="showOtherOcassion()">
+					    <span class="input-label">Other</span>
+					    <input class="other-ocassion" type="text" ng-model="videoData.ocassion.eventName" style="{{ _otherOcassionColor }}">
+					  </label>
+				  </div>
+
+				  <div class="list list-inset">
+				  	<label class="item item-input">
+					  	<i class="icon ion-calendar placeholder-icon"></i>
+					  	<span class="input-label">Ocassion Date</span>
+					    <input class="ocassion-date" type="date" ng-model="videoData.ocassion.eventDate"/>
+					  </label>
+					</div>
+		    </div>
+		  </ion-slide>
+
+
+
+
+
+
+
+
+
+
 
 			<!-- ************* For who is it ************* -->
 		  <ion-slide>
@@ -47,31 +85,7 @@
 		    </div>
 		  </ion-slide>
 
-		  <!-- ************* Select Ocassion and Date ************* -->
-		  <ion-slide>
-		    <div class="slide select-ocassion">
-		    	<h4>Select Ocassion</h4>
-		    	<div class="list">
-					  <label ng-repeat="event in events" class="item item-radio" ng-click="hideOtherOcassion(event)">
-					    <input type="radio" name="group" ng-model="videoData.ocassion.eventId" value="{{event.id}}">
-					    <div class="item-content">{{ event.name }}</div>
-					    <i class="radio-icon ion-checkmark"></i>
-					  </label>
-					  <label class="item item-input" ng-click="showOtherOcassion()">
-					    <span class="input-label">Other</span>
-					    <input class="other-ocassion" type="text" ng-model="videoData.ocassion.eventName" style="{{ _otherOcassionColor }}">
-					  </label>
-				  </div>
-
-				  <div class="list list-inset">
-				  	<label class="item item-input">
-					  	<i class="icon ion-calendar placeholder-icon"></i>
-					  	<span class="input-label">Ocassion Date</span>
-					    <input class="ocassion-date" type="date" ng-model="videoData.ocassion.eventDate"/>
-					  </label>
-					</div>
-		    </div>
-		  </ion-slide>
+		  
 
 
 		  <!-- ************* Upload your clip ************* -->
@@ -135,13 +149,7 @@
 			  </div>
 		  </ion-slide> -->
 		    
-		  
-		  
-		  
-		  
-
-		  
-
+	
 		  
 
 		</ion-slide-box>

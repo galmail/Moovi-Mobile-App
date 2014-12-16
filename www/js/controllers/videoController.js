@@ -28,13 +28,6 @@ moovi.controllers.controller('VideoCtrl', function($ionicViewService, $scope, $s
 		participants: []
 	};
 
-  // $scope.action = function(){
-  //   $ionicBackdrop.retain();
-  //   $timeout(function(){
-  //     $ionicBackdrop.release();
-  //   }, 1000);
-  // };
-
 
   if($state.current.action == 'show'){
 		

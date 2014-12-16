@@ -4,11 +4,35 @@
  */
 
 moovi.services.factory('User', function($http, Util) {
-  var data = {};
+  
+  var LoggedUser = {};
+
   return {
-  	getInfo: function(){ return data; },
-  	setInfo: function(newdata){ data = newdata; },
-  	login: function(callback){
+  	
+    getInfo: function(){ return LoggedUser; },
+  	
+    setInfo: function(userData){ LoggedUser = userData; },
+
+    isLogged: function(){
+      return localStorage.getItem('token')!=null;
+    },
+
+    logout: function(){
+      LoggedUser = {};
+      delete localStorage.email;
+      delete localStorage.token;
+    },
+
+    setAuthHeaders: function(){
+      if(this.isLogged()){
+        $http.defaults.headers.common = {
+          'X-User-Email': localStorage.getItem('email'),
+          'X-User-Token': localStorage.getItem('token')
+        };
+      }
+    },
+  	
+    login: function(callback){
   		var self = this;
   		$http.get('/users/sign_in',{
   			params: {
@@ -17,19 +41,19 @@ moovi.services.factory('User', function($http, Util) {
   			}
   		}).success(function(res){
   			console.log('login success: ' + JSON.stringify(res));
-        data.user_id = res.id;
-  			// save auth_token
-        $http.defaults.headers.common = {
-          'X-User-Email': res.email,
-          'X-User-Token': res.auth_token
-        };
+        LoggedUser.user_id = res.id;
+        // save email and token in localStorage
+        localStorage.setItem('email',res.email);
+        localStorage.setItem('token',res.auth_token);
+        self.setAuthHeaders();
   			callback(true);
   		}).error(function(){
   			console.log('login error');
   			callback(false);
   		});
   	},
-  	signup: function(callback){
+  	
+    signup: function(callback){
   		var self = this;
   		$http.get('/users/sign_up',{
   			params: self.getInfo()
